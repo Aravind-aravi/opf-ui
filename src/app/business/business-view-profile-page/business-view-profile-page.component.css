@@ -1,0 +1,130 @@
+body{
+
+  background-image: url("../../../assets/e1.jpeg");
+  min-height: 100vh;
+  min-width: 35px;
+background-repeat: no-repeat;
+background-size: cover;
+height: 25cm;
+}
+#userprofilepic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+#d{
+  margin-bottom: 0.5cm;
+}
+
+#mail{
+  color: #bdbdb9;
+}
+#cardprofile1{
+margin-top: 1cm;
+  margin-left: 1cm;
+  margin-right: 0.5cm;
+
+
+}
+#sp{
+  margin-left: 1cm;
+}
+#cardprofile{
+  margin-top: 1cm;
+  margin-left: 1cm;
+
+}
+#cardpic{
+  margin-top: 0.5cm;
+}
+#profilepic{
+  height: 5cm;
+  width: 6cm;
+  margin-top: 0.3cm;
+  margin-left: 0.8cm;
+}
+#accounticon{
+  margin-bottom: 0.2cm;
+}
+#searchicon
+{
+  margin-bottom: 5mm;
+  margin-right: 4mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:white;
+}
+#projecticon
+{
+  margin-top: 3.5mm;
+  margin-bottom: 3mm;
+  margin-right: 4mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:white;
+
+
+}
+#editbutton{
+  margin-right:2cm;
+}
+
+#rating{
+  margin-top: 2mm;
+
+}
+#rating1{
+  margin-top: 2mm;
+  margin-bottom: 5cm;
+}
+#space{
+  margin-left: 0.5cm;
+}
+
+.checked {
+  color: orange;
+}
+
+#cardprojecticon
+{
+  margin-top: 4mm;
+
+
+  margin-left: 7mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:royalblue;
+
+}
+#change{
+  margin-top: 0.8cm;
+}
+.material-icons.md-18{
+  font-size: 18px;
+}
+#navbarcolor{
+  background-color:transparent
+}
+#clearbutton{
+  margin-top: 4mm;
+}
+#card-title{
+  margin-top:3mm ;
+  margin-right: auto;
+
+}
+#icon{
+  margin-left: 4mm;
+  margin-bottom: 2mm;
+}
+#icon1{
+  font-size: 18px;
+  position: -webkit-sticky;
+  margin-bottom: 6mm;
+
+}
+.card-body{
+  margin-right: 5mm;
+}

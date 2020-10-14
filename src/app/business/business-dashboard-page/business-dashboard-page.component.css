@@ -1,0 +1,144 @@
+body{
+  background-image: url("../../../assets/usersetting.jpeg");
+  min-height: 100vh;
+  min-width: 35px;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.Approved {
+  color:green;
+
+}
+.notApproved{
+color: red;
+}
+
+
+#userprofilepic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+#accounticon{
+  margin-bottom: 0.2cm;
+}
+#text{
+  margin-left: 1cm;
+}
+#searchicon
+{
+  margin-bottom: 5mm;
+  margin-right: 4mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color: black;
+}
+.fa fa-star checked{
+  color: orange;
+}
+#mail{
+  color: #bdbdb9;
+}
+#projecticon
+{
+  margin-top: 3.5mm;
+  margin-bottom: 3mm;
+  margin-right: 4mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:black;
+
+}
+#projecticon1
+{
+  color:#6e7070;
+
+}
+#button{
+
+  margin-right: 4mm;
+}
+
+#mail{
+  color: #bdbdb9;
+}
+#bg{
+  background-color: white;
+}
+table {
+  counter-reset: tableCount;
+}
+.counterCell:before {
+  content: counter(tableCount);
+  counter-increment: tableCount;
+}
+
+#more {display: none;}
+
+
+#cardetails{
+
+  margin-bottom: 1cm;
+}
+#projectdetails{
+  margin-top: 5mm;
+  margin-left: 5mm;
+  margin-bottom: 5mm;
+}
+.sqaure-circle{
+  margin-left: 10mm;
+
+}
+.checked {
+  color: orange;
+}
+
+#cardprojecticon
+{
+  margin-top: 4mm;
+
+
+  margin-left: 7mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:royalblue;
+
+}
+.material-icons.md-18{
+  font-size: 18px;
+}
+#navbarcolor{
+  background-color: transparent;
+}
+#question{
+  margin-left: 5cm;
+}
+#clearbutton{
+  margin-top: 4mm;
+}
+#card-title{
+  margin-top:3mm ;
+  margin-right: auto;
+
+}
+#icon{
+  margin-left: 4mm;
+  margin-bottom: 2mm;
+}
+#icon1{
+  font-size: 18px;
+  position: -webkit-sticky;
+  margin-bottom: 6mm;
+
+}
+.card-body{
+  margin-right: 5mm;
+}
+#navmini{
+  background-color:transparent;
+  opacity:5;
+  color: black;
+}

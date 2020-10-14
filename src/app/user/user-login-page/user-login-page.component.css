@@ -1,0 +1,28 @@
+.bguserloginpage{
+  background-image: url("../../../assets/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg");
+  min-height: 100vh;
+  min-width: 35px;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.btn-success{
+  margin-left: 3.8mm;
+}
+.btn-primary{
+  margin-left: 2mm;
+}
+
+#user
+{
+  color: white;
+  font-family: unset;
+font-size: 0.5cm;
+font-style: bold;
+
+}
+#navbarNav{
+  color: white;
+  font-style: normal;
+}
+

@@ -1,0 +1,160 @@
+<body>
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark " id="navbarcolor">
+    <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark" id="logoicon1"
+      alt="">
+    <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link">
+      <font size="4">&nbsp;Open Prototype Platform</font>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  justify-content-end  " id="navbarNav">
+      <i class="fas fa-home text-light"></i>
+      <ul class="navbar-nav font-color">
+
+        <li class="nav-item active ">
+
+          <a class="nav-link" *ngIf="loggedIn" routerLink="/businessHomePage" routerLinkActive="active-link">Home</a>
+        </li><i class="material-icons md-18" id="projecticon">desktop_mac</i>
+        <li class="nav-item ">
+          <a class="nav-link" *ngIf="loggedIn" routerLink="/businessDashboardPage" routerLinkActive="active-link">My Dashboard</a>
+        </li>
+
+      </ul>
+
+      <a class="nav-link " data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"
+        href="#">
+        <i class="material-icons"><i class="add-icon1 material-icons" id=accounticon><img src="../../../assets/images (1).png"
+              class="rounded-circle" height="30cm" width="30cm"></i></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right  col-lg-2">
+        <!--profile-->
+
+        <h5 class="card-header">
+          <div>
+          <font size="3">{{employee.first_name}} {{employee.last_name}}</font></div>
+          <font size="2" id="mail">{{employee.email}}</font>
+        </h5>
+        <div class="card-body">
+          <div class="card-text">
+            <a routerLink="/businessViewProfilePage" *ngIf="loggedIn" routerLinkActive="active-link" class="text-dark">
+              <font size="2">View Profile</font>
+            </a></div>
+          <div class="card-text">
+            <a type="button" *ngIf="loggedIn" class="text-dark" (click)="logout()">
+              <font size="2">Logout</font>
+            </a></div>
+        </div>
+
+        <!--#profile-->
+
+      </div>
+    </div>
+  </nav>
+  <!--#navbar-->
+
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-12 col-lg-1">
+        <br>
+        <br>
+      </div>
+
+      <div class="card col col-lg" id="cardprofile">
+
+        <div>
+          <ul class="list-group list-group-flush">
+            <div class="card-body">
+              <div class="row">
+                <a routerLink="/businessProjectPage" routerLinkActive="active-link">
+                  <button class="btn btn-warning my-3 my-sm-0" id="post" type="submit">Post a Project</button></a>
+                <form class="form-inline ml-auto">
+
+                  <input class="form-control mr-sm-3" type="search" placeholder="Search for Project"
+                    aria-label="Search">
+                  <button class="btn btn-success my-3 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <!--card-->
+
+        <div class="card " *ngFor="let a of project; let i = index">
+          <div class="row">
+            <div class="col-lg-1">
+              <i class="material-icons md-24" id="cardprojecticon">desktop_mac</i>
+            </div>
+            <div class="col-lg-11">
+              <div id="card-title">
+                <h5>{{a.head_line}}</h5>
+              </div>
+              <p>
+                <font size="3">{{a.summary}} </font>
+              </p>
+              <div class="row">
+                <i class="material-icons md-18 " id="icon">hourglass_full</i>
+                <font size="2">&nbsp;1 week ago</font>
+              </div>
+
+              <div class="row">
+                <div class="col-9">
+                  <i class="material-icons md-18 " id="icon1">local_offer</i>
+                  <a>
+                    <font size="2">{{a.skill}}</font>
+                  </a></div>
+
+                <div class="col-lg">
+                  <a routerLink="/businessHomePage" routerLinkActive="active-link">
+                    <i type="button" class="fas fa-trash-alt" (click)="deleteProjectData(a.id)"></i>
+                  </a></div>
+
+                <div class="col-lg">
+                  <i class="fas fa-eye" type="button" (click)="onselect(a)"> </i>
+
+
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!--#card-->
+        <!--page
+                              <div class="card ">
+                              <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                              </nav> </div>  <!--#page-->
+
+
+
+
+
+      </div>
+      <div class="col-12 col-lg-1">
+        <br>
+        <br>
+      </div>
+
+
+
+    </div>
+  </div>
+</body>

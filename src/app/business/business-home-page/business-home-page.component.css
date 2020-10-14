@@ -1,0 +1,96 @@
+body{
+
+  height: 30cm;
+
+  background-image: url("../../../assets/e1.jpeg");
+  min-height: 100vh;
+  min-width: 35px;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+#userprofilepic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+#accounticon{
+  margin-bottom: 0.2cm;
+}
+#searchicon
+{
+  margin-bottom: 5mm;
+  margin-right: 4mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color: black;
+}
+#projecticon
+{
+  margin-top: 3.5mm;
+  margin-bottom: 3mm;
+  margin-right: 4mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:#6e7070;
+
+}
+
+#cardprojecticon
+{
+  margin-top: 4mm;
+
+
+  margin-left: 7mm;
+  height: 0.3mm;
+  width: 0.5mm;
+  color:royalblue;
+
+}
+#cardprofile{
+
+  margin-top: 2cm;
+  margin-left: 1cm;
+  margin-right: 1cm;
+
+
+
+
+  }
+
+#mail{
+  color: #bdbdb9;
+}
+#post{
+  margin-left: 7mm;
+  color:black;
+}
+.material-icons.md-18{
+  font-size: 18px;
+}
+#navbarcolor{
+  background-color:transparent;
+}
+#clearbutton{
+  margin-top: 4mm;
+}
+#card-title{
+  margin-top:3mm ;
+  margin-right: auto;
+
+}
+#icon{
+  margin-left: 4mm;
+  margin-bottom: 2mm;
+}
+#icon1{
+  font-size: 18px;
+  position: -webkit-sticky;
+  margin-bottom: 6mm;
+
+}
+.card-body{
+  margin-right: 5mm;
+}

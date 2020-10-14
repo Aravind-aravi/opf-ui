@@ -1,0 +1,169 @@
+<body>
+  <div class="container-fluid">
+    <!--navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark " id="navbarcolor">
+      <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark"
+        id="logoicon1" alt="">
+      <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link">
+        <font size="4">&nbsp;Open Prototype Platform</font>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse  justify-content-end  " id="navbarNav">
+        <i class="material-icons" id="searchicon">search</i>
+        <ul class="navbar-nav font-color">
+
+          <li class="nav-item active ">
+
+            <a class="nav-link" *ngIf="loggedIn" routerLink="/userHomePage" routerLinkActive="active-link">Browse</a>
+          </li><i class="material-icons md-18" id="projecticon">desktop_mac</i>
+          <li class="nav-item active ">
+            <a class="nav-link" *ngIf="loggedIn" routerLink="/userProjectPage" routerLinkActive="active-link">My Project</a>
+          </li>
+
+        </ul>
+
+        <a class="nav-link " data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"
+          href="#">
+          <i class="material-icons"><i class="add-icon1 material-icons" id=accounticon><img src="../../../assets/icon-256x256.png"
+                class="rounded-circle" height="30cm" width="30cm"></i></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right  col-lg-2">
+          <!--profile-->
+
+          <h5 class="card-header">
+            <font size="3">
+              {{user.first_name}} {{user.last_name}}</font>
+            <font size="2" id="mail">.{{user.email}}</font>
+          </h5>
+          <div class="card-body">
+            <div class="card-text">
+              <a routerLink="/userViewProfilePage" *ngIf="loggedIn" routerLinkActive="active-link" class="text-dark">
+                <font size="2">View Profile</font>
+              </a></div>
+            <div class="card-text">
+              <a routerLink="/userSettingsPage" *ngIf="loggedIn" routerLinkActive="active-link" class="text-dark">
+                <font size="2">User Settings</font>
+              </a></div>
+            <div class="card-text">
+              <a type="button" *ngIf="loggedIn" class="text-dark" (click)="logout()">
+                <font size="2">Logout</font>
+              </a></div>
+          </div>
+
+          <!--#profile-->
+
+        </div>
+      </div>
+    </nav>
+    <!--#navbar-->
+
+    <!--card-->
+
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="card col col-lg" id="cardprofile">
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item font-weight-bold">
+            <h3>Profile Details</h3>
+          </li>
+          <li class="list-group-item">
+            <font size="4" class="font-weight-bold">Name</font>
+
+            <div class="row" id="rating">
+              <div class="form-group col-md">
+                <label for="inputPassword4">
+                  <font size="2" class="font-weight-bold">First Name*</font>
+                </label>
+                <input type="text" class="form-control" name="first_name" value="name" [(ngModel)]="user.first_name"
+                  id="inputPassword4">
+
+              </div>
+              <div class="form-group col-md">
+                <label for="inputPassword4">
+                  <font size="2" class="font-weight-bold">Last Name*</font>
+                </label>
+                <input type="text" class="form-control" name="last_name" value="name" [(ngModel)]="user.last_name"
+                  id="inputPassword4">
+              </div>
+              <!-- <div class="form-group col-md-4">
+                <label for="exampleFormControlFile1">
+                  <font size="2" class="font-weight-bold">Upload Profile Picture</font>
+                </label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div> -->
+
+
+
+            </div>
+
+          </li>
+          <li class="list-group-item">
+            <font size="4" class="font-weight-bold">Address</font>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">
+                  <font size="2" class="font-weight-bold">Email*</font>
+                </label>
+                <input type="email" class="form-control" name="email" value="email" [(ngModel)]="user.email"
+                  id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">
+                  <font size="2" class="font-weight-bold">Company Name*</font>
+                </label>
+                <input type="text" class="form-control" name="name" value="MAANTT"
+                  id="inputEmail4">
+              </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">
+                  <font size="2" class="font-weight-bold">Location*</font>
+                </label>
+                <input type="text" class="form-control" name="location" value="place" [(ngModel)]="user.location"
+                  id="inputCity">
+              </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <button type="button" id="change" (click)="updateUserData()" class="btn btn-success" >
+                  Save
+                </button>
+              </div>
+              <div class="form-group col-md-4">
+              </div>
+              <div class="form-group col-md-2">
+
+
+              </div>
+            </div>
+
+
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-lg-1"></div>
+
+    </div>
+    <!--#card-->
+    <div class="row" id="space">
+
+    </div>
+
+
+
+
+  </div>
+</body>

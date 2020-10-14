@@ -1,0 +1,139 @@
+<div class="bguserloginpage">
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+    <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark" id="logoicon1"
+      alt="">
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <div class="collapse navbar-collapse " id="navbarNav">
+
+      <ul class="navbar-nav font-color">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/userLoginPage" routerLinkActive="active-link">User Login <span
+              class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="/businessLoginPage" routerLinkActive="active-link">Business Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active-link">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--#navbar-->
+
+  <div class="container-fluid ">
+
+
+    <section id="user">
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 col-lg-5"></div>
+
+
+        <div class="col-12 col-lg-3">
+          <form>
+            <div class="col-md-11 ">
+              <label>Email address</label>
+              <input type="email" name="email" [(ngModel)]="email" class="form-control text-dark"
+                id="exampleInputuserid" placeholder="email@example.com" aria-describedby="userHelp">
+
+            </div>
+            <div class="form-group col-md-11">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" [(ngModel)]="password" class="form-control "
+                id="exampleInputPassword1">
+            </div>
+
+
+            <button type="button" (click)="checkLogin()" class="btn btn-success">Login</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              &nbsp;Join in
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel">User Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-dark">
+                    <!--form-->
+                    <div class="row" id="rating">
+                      <div class="form-group col-md-6">
+                        <label >
+                          <font size="2" class="font-weight-bold">First Name*</font>
+                        </label>
+                        <input type="text" name="first_name" [(ngModel)]="userdata.first_name" class="form-control"
+                         >
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label >
+                          <font size="2" class="font-weight-bold">Last Name*</font>
+                        </label>
+                        <input type="text" name="last_name" [(ngModel)]="userdata.last_name" class="form-control"
+                         >
+                      </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                      <label >
+                        <font size="2" class="font-weight-bold">Email*</font>
+                      </label>
+                      <input type="email" name="email" [(ngModel)]="userdata.email" class="form-control"
+                       >
+
+                    </div>
+
+                    <div class="form-group ">
+                      <label >
+                        <font size="2" class="font-weight-bold">Password*</font>
+                      </label>
+                      <input type="password" name="password" [(ngModel)]="userdata.password" class="form-control"
+                       >
+                    </div>
+
+
+
+
+
+                    <!--#form-->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" type="submit" class="btn btn-success" (click)="addUserData()">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--#model-->
+          </form>
+        </div>
+
+
+        <div class="col-12 col-lg-4"></div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+  </div>
+</div>

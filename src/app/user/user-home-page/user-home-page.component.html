@@ -1,0 +1,173 @@
+<body>
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark " id="navbarcolor">
+    <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark" id="logoicon1"
+      alt="">
+    <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link">
+      <font size="4">&nbsp;Open Prototype Platform</font>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  justify-content-end  " id="navbarNav">
+      <i class="material-icons" id="searchicon">search</i>
+      <ul class="navbar-nav font-color">
+
+        <li class="nav-item active ">
+
+          <a *ngIf="loggedIn" class="nav-link" routerLink="/userHomePage" routerLinkActive="active-link">Browse</a>
+        </li><i class="material-icons md-18" id="projecticon">desktop_mac</i>
+        <li class="nav-item ">
+          <a  class="nav-link" *ngIf="loggedIn" routerLink="/userProjectPage" routerLinkActive="active-link">My Project</a>
+        </li>
+
+      </ul>
+
+      <a class="nav-link " data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"
+        href="#">
+        <i class="material-icons"><i class="add-icon1 material-icons" id=accounticon><img src="../../../assets/icon-256x256.png"
+              class="rounded-circle" height="30cm" width="30cm"></i></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right  col-lg-2">
+        <!--profile-->
+
+        <h5 class="card-header">
+          <font size="3">{{user.first_name}} {{user.last_name}}</font>
+          <font size="2" id="mailcolor">.{{user.email}}</font>
+        </h5>
+        <div class="card-body">
+          <div class="card-text">
+            <a *ngIf="loggedIn" routerLink="/userViewProfilePage" routerLinkActive="active-link" class="text-dark">
+              <font size="2">View Profile</font>
+            </a></div>
+          <div class="card-text">
+            <a *ngIf="loggedIn" routerLink="/userSettingsPage" routerLinkActive="active-link" class="text-dark">
+              <font size="2">User Settings</font>
+            </a></div>
+          <div class="card-text">
+            <a *ngIf="loggedIn" type="button" class="text-dark" (click)="logout()" >
+              <font size="2">Logout</font>
+            </a></div>
+        </div>
+
+        <!--#profile-->
+
+      </div>
+    </div>
+  </nav>
+  <!--#navbar-->
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-12 col-lg-3">
+        <br>
+        <br>
+        <div class="card" style="width: 16rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <label>Skills</label>
+              <input type="text" class="form-control text-dark" id="exampleInputuserid" aria-describedby="userHelp">
+
+              <button type="button" id="clearbutton" class="btn btn-primary btn-sm">Clear Skills</button>
+            </li>
+            <li class="list-group-item">
+              <label></label>
+              <label for="inputState">
+                <font size="2">Filter:</font>
+              </label>
+              <select id="inputState" class="form-control ">
+                <option selected>by time</option>
+                <option value="Last week">Last week</option>
+                <option value="Last month">Last month</option>
+                <option value="Last year">Last year</option>
+              </select>
+            </li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Reset</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-9">
+        <br>
+        <br>
+        <div class="card" style="width: 55rem;">
+          <ul class="list-group list-group-flush">
+            <div class="card-body">
+              <div class="row">
+                <form class="form-inline ml-auto">
+                  <input class="form-control mr-sm-3" type="search" placeholder="Search for Project"
+                    aria-label="Search">
+                  <button class="btn btn-success my-3 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <!--card-->
+        <div class="card " style="width: 55rem;" *ngFor="let b of business; let i = index">
+          <div class="row">
+            <div class="col-lg-1">
+              <i class="material-icons md-24" id="cardprojecticon">desktop_mac</i>
+            </div>
+            <div class="col-lg-11">
+              <div id="card-title">
+                <h5>{{b.head_line}}</h5>
+              </div>
+              <p>
+                <font size="3">{{b.summary}} </font>
+              </p>
+              <div class="row">
+                <i class="material-icons md-18 " id="icon">hourglass_full</i>
+                <font size="2">&nbsp;1 week ago</font>
+              </div>
+
+              <div class="row">
+                <div class="col-10">
+                  <i class="material-icons md-18 " id="icon1">local_offer</i>
+                  <a>
+                    <font size="2">{{b.skill}}</font>
+                  </a></div>
+                <div class="col-2">
+
+                  <i type="button" class="material-icons " id="projecticon" (click)="onselect(b)">visibility</i>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <!--#card-->
+        <!--page-->
+        <div class="card " style="width: 55rem;">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--#page-->
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</body>

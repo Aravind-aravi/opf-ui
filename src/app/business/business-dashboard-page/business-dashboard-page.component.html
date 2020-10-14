@@ -1,0 +1,307 @@
+<body>
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark " id="navbarcolor">
+    <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark" id="logoicon1"
+      alt="">
+    <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link">
+      <font size="4">&nbsp;Open Prototype Platform</font>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  justify-content-end  " id="navbarNav">
+      <i class="fas fa-home font-weight-bold" id="projecticon1"></i>
+      <ul class="navbar-nav font-color">
+
+        <li class="nav-item">
+          <a class="nav-link " id="projecticon1" *ngIf="loggedIn" routerLink="/businessHomePage"
+            routerLinkActive="active-link">Home</a>
+        </li><i class="material-icons md-18" id="projecticon">desktop_mac</i>
+        <li class="nav-item active">
+          <a class="nav-link text-dark" *ngIf="loggedIn" routerLink="/businessDashboardPage"
+            routerLinkActive="active-link">My
+            Dashboard</a>
+        </li>
+
+      </ul>
+
+      <a class="nav-link " data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"
+        href="#">
+        <i class="material-icons"><i class="add-icon1 material-icons" id=accounticon><img src="../../../assets/images (1).png"
+              class="rounded-circle" height="30cm" width="30cm"></i></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right  col-lg-2">
+        <!--profile-->
+
+        <h5 class="card-header">
+          <div>
+          <font size="3">{{employee.first_name}} {{employee.last_name}}</font></div>
+          <font size="2" id="mail">{{employee.email}}</font>
+        </h5>
+        <div class="card-body">
+          <div class="card-text">
+            <a routerLink="/businessViewProfilePage" *ngIf="loggedIn" routerLinkActive="active-link" class="text-dark">
+              <font size="2">View Profile</font>
+            </a></div>
+          <div class="card-text">
+            <a type="button" *ngIf="loggedIn" class="text-dark" (click)="logout()">
+              <font size="2">Logout</font>
+            </a></div>
+        </div>
+
+        <!--#profile-->
+
+      </div>
+    </div>
+  </nav>
+  <!--#navbar-->
+  <!--navbar1-->
+  <div class="container-fluid" id="navmini"><br>
+    <h5 class="text-light">&nbsp;&nbsp;{{data2.head_line}}</h5>
+    <br>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active text-light font-weight-bold" data-toggle="tab" href="#details">&nbsp;Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" data-toggle="tab" href="#volunters">Volunters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" data-toggle="tab" href="#file">Files</a>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <!-- Tab panes -->
+  <div class="tab-content" id="cardetails" style="width: 50rem;">
+    <div id="details" class="container tab-pane active">
+      <div class="card" style="width: 50rem;">
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-10">
+              <h5 id="projectdetails">Project Details</h5>
+            </div>
+
+            <div class="col">
+              <!--edit-->
+
+              <i type="button" id="projectdetails" class="fas fa-pencil-alt" data-toggle="modal"
+                data-target="#edit"></i>
+              <!-- Modal -->
+              <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-dark" id="exampleModalLabel">Edit Details</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body text-dark">
+
+                      <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                          <font size="4" class="font-weight-bold">Choose a name for your project</font>
+                          <input type="text" class="form-control" name="head_line" [(ngModel)]="data2.head_line"
+                            >
+
+                          <div id="rating">
+                            <font size="4" class="font-weight-bold">Tell us more about your project</font><br>
+                            <textarea class="form-control" name="summary" [(ngModel)]="data2.summary"
+                               rows="4"></textarea>
+                          </div>
+                          <div>
+                            <font size="4" class="font-weight-bold">Skills</font>
+                            <input type="text" class="form-control" name="skill" [(ngModel)]="data2.skill"
+                              >
+
+                          </div>
+
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-success" (click)="updateProjectData()">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--#model-->
+
+
+              <!--#edit-->
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="card-body">
+
+          <p>
+            <font size="3">{{data2.summary}}</font>
+          </p>
+          <h6>Skills Required</h6>
+          <div class="row">
+            <div class="col-10">
+              <font size="3">{{data2.skill}}</font>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="volunters" class="container tab-pane fade">
+      <div style="width: 50rem; background-color: #edede8;" >
+        <!--card-->
+        <div class="card" *ngFor="let data of data2.userentity;let i = index"><br>
+          <div class="row">
+            <div class="col-12 col-lg-2"> <img src="../../../assets/icon-256x256.png" class="sqaure-circle" height="55cm"
+                width="55cm"></div>
+            <div class="col-12 col-lg-6">
+              <div class="row">
+                <font size="3">
+                  <h6>{{data.first_name}} {{data.last_name}} <a id="mail"> {{data.email}}</a></h6>
+                </font>
+              </div>
+
+              <div class="row"><span class="badge badge-warning">{{data.rating}}</span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+        <!--#card-->
+
+      </div>
+    </div>
+
+    <!--file-->
+    <div id="file" class="container tab-pane fade">
+      <div class="card" style="width: 60rem;">
+        <div class="card">
+          <h5 id="projectdetails">Files</h5>
+
+        </div>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Rating</th>
+              <th>Files</th>
+
+              <th>Status</th>
+            </tr>
+          </thead>
+
+
+              <tbody  *ngFor="let a of data2.contributeduserentity"   >
+
+              <tr id="bg" *ngFor="let data of a.userentity" >
+
+              <td class="counterCell"></td>
+              <td>{{data.first_name}} {{data.last_name}}</td>
+              <td>{{data.email}}</td>
+              <td><span class="badge badge-warning">4.5</span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </td>
+              <td>
+                <div class="panel-body">
+                  <a href="http://localhost:8088/user/rest/api/file/{{a.id}}">
+                    <button type="button" class="btn btn-primary">Download</button></a></div>
+
+              </td>
+              <td>
+
+                <div >
+
+                  <button type="button"  (click)="reject(a.id)" id="button" class="btn btn-warning" >
+                  Reject</button>
+                  <button type="button"   (click)="approved(a.id)" class="btn btn-success">Approve</button>
+                  </div>
+
+<!--
+                <!-- Modal
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="exampleModalLabel">Approved</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body text-dark">
+
+
+                        <font size="4">Approved Sucessfully</font>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                #model -->
+
+              </td>
+
+            </tr>
+          </tbody>
+
+        </table>
+
+
+      </div>
+
+    </div>
+
+    <!--#file-->
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

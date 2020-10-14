@@ -1,0 +1,162 @@
+<body>
+  <div class="container-fluid">
+
+<!--navbar-->
+
+<nav class="navbar navbar-expand-lg navbar-dark " id="navbarcolor" >
+  <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark" id="logoicon1" alt="">
+  <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link"> <font size="4" >&nbsp;Open Prototype Platform</font></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse  justify-content-end  " id="navbarNav">
+    <i class="fas fa-home text-light"></i>
+  <ul class="navbar-nav font-color">
+
+  <li class="nav-item">
+  <a class="nav-link text-light" *ngIf="loggedIn" routerLink="/businessHomePage" routerLinkActive="active-link">Home</a>
+  </li><i class="material-icons md-18"id="projecticon">desktop_mac</i>
+  <li class="nav-item active">
+  <a class="nav-link text-light " *ngIf="loggedIn" routerLink="/businessDashboardPage" routerLinkActive="active-link">My Dashboard</a>
+  </li>
+
+  </ul>
+
+  <a class="nav-link " data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false" href="#">
+    <i class="material-icons"><i class="add-icon1 material-icons" id=accounticon ><img src="../../../assets/images (1).png" class="rounded-circle" height="30cm" width="30cm"></i></i>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right  col-lg-2">
+  <!--profile-->
+
+    <h5 class="card-header">
+      <div><font size="3">{{employee.first_name}} {{employee.last_name}}</font></div>
+      <font size="2" id="mail" >{{employee.email}}</font></h5>
+    <div class="card-body">
+      <div class="card-text">
+      <a routerLink="/businessViewProfilePage" *ngIf="loggedIn" routerLinkActive="active-link" class="text-dark"><font size="2">View Profile</font></a></div>
+      <div class="card-text">
+        <a type="button" *ngIf="loggedIn" class="text-dark" (click)="logout()">
+          <font size="2">Logout</font>
+        </a></div>
+
+    </div>
+
+                  <!--#profile-->
+
+    </div>
+  </div>
+  </nav>
+<!--#navbar-->
+    <!--card-->
+
+    <div class="row" >
+
+    <div class="col col-lg-3" id="cardprofile" >
+      <div class="card" style="width: 16rem;">
+      <div class="row">
+        <img src="../../../assets/images (1).png" class="rounded-circle" id ="profilepic"   alt="">
+
+      </div>
+      <div class="row" id="rating">
+        <h5 id="space" id="sp">{{employee.first_name}} {{employee.last_name}}</h5></div>
+         <!--mail-->
+
+         <div class="row"  id="rating">
+         <div id="sp"> <i  class="fas fa-at"></i></div>
+        <font size="3" id="space" >{{employee.email}}</font>
+        </div>
+
+
+              <div class="row"  id="rating">
+
+               <div id="sp"> <i id="d" class="far fa-building"></i></div>
+              <font size="3" id="space" >MANNTT</font>
+              </div>
+
+      </div>
+    </div>
+
+     <div class=" card col-lg-8 " id="cardprofile1">
+
+
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item font-weight-bold"><h3>Profile Details</h3></li>
+          <li class="list-group-item">
+            <font size="4" class="font-weight-bold">Name</font>
+
+            <div class="row" id="rating">
+              <div class="form-group col-md">
+                <label>  <font size="2" class="font-weight-bold">First Name*</font></label>
+                <input type="text" class="form-control" name="first_name" [(ngModel)]="employee.first_name" >
+
+              </div>
+              <div class="form-group col-md">
+                <label ><font size="2" class="font-weight-bold">Last Name*</font></label>
+                <input type="text" class="form-control" name="last_name"  [(ngModel)]="employee.last_name" >
+              </div>
+              <!-- <div class="form-group col-md-4">
+                <label for="exampleFormControlFile1"><font size="2" class="font-weight-bold">Upload Profile Picture</font></label>
+                <input type="file" class="form-control-file" name="file" value="file" id="exampleFormControlFile1">
+              </div> -->
+
+
+
+             </div>
+
+          </li>
+          <li class="list-group-item">
+            <font size="4" class="font-weight-bold">Address</font>
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label ><font size="2" class="font-weight-bold">Email*</font></label>
+                  <input type="email" class="form-control" name="email" [(ngModel)]="employee.email"  placeholder="Email">
+                </div>
+                <!-- <div class="form-group col-md-6">
+                  <label for="inputPassword4"><font size="2" class="font-weight-bold">Password*</font></label>
+                  <input type="password" class="form-control" id="inputPassword4" name="password" [(ngModel)]="employee.password">
+                </div> -->
+                <div class="form-group col-md-6 ">
+                  <label for="inputState"><font size="2" class="font-weight-bold">Company Name*</font></label>
+                  <input type="text" class="form-control"  name="name" value="MANNTT"  id="inputEmail4" >
+                </div>
+
+              </div>
+
+
+
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <button type="button" id="change" (click)="updateEmployee()" class="btn btn-success" >
+                    Update
+                  </button>
+                    </div>
+                <div class="form-group col-md-4">
+                   </div>
+                <div class="form-group col-md-2">
+
+
+                   </div>
+              </div>
+
+
+          </li>
+
+        </ul>
+
+    <!---->
+
+
+     </div>
+
+  </div>
+
+
+
+
+
+  </div>
+</body>

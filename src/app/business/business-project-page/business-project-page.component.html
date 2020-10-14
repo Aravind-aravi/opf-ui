@@ -1,0 +1,141 @@
+<body>
+  <div class="container-fluid">
+
+    <!--navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark " id="navbarcolor">
+      <img src="../../assets/logoopf.jpg" width="30" height="30" class="d-inline-block align-top img-dark"
+        id="logoicon1" alt="">
+      <a class="nav-link text-light" routerLink="/home" routerLinkActive="active-link">
+        <font size="4">&nbsp;Open Prototype Platform</font>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse  justify-content-end  " id="navbarNav">
+        <i class="fas fa-home text-light"></i>
+        <ul class="navbar-nav font-color">
+
+          <li class="nav-item">
+            <a class="nav-link text-light" *ngIf="loggedIn"  routerLink="/businessHomePage" routerLinkActive="active-link">Home</a>
+          </li><i class="material-icons md-18" id="projecticon">desktop_mac</i>
+          <li class="nav-item active">
+            <a class="nav-link text-light " *ngIf="loggedIn"  routerLink="/businessDashboardPage" routerLinkActive="active-link">My
+              Dashboard</a>
+          </li>
+
+        </ul>
+
+        <a class="nav-link " data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"
+          href="#">
+          <i class="material-icons"><i class="add-icon1 material-icons" id=accounticon><img
+                src="../../../assets/images (1).png" class="rounded-circle" height="30cm" width="30cm"></i></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right  col-lg-2">
+          <!--profile-->
+
+          <h5 class="card-header">
+            <div>
+            <font size="3">{{employee.first_name}} {{employee.last_name}}</font></div>
+            <font size="2" id="mail" >{{employee.email}}</font>
+          </h5>
+          <div class="card-body">
+            <div class="card-text">
+              <a routerLink="/businessViewProfilePage" *ngIf="loggedIn"  routerLinkActive="active-link" class="text-dark">
+                <font size="2">View Profile</font>
+              </a></div>
+              <div class="card-text">
+                <a type="button" *ngIf="loggedIn"  class="text-dark" (click)="logout()">
+                  <font size="2">Logout</font>
+                </a></div>
+              </div>
+
+          <!--#profile-->
+
+        </div>
+      </div>
+    </nav>
+    <!--#navbar-->
+
+
+    <!--card-->
+
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="card col col-lg" id="cardprofile">
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item">
+            <h3 class="font-weight-bold">Tell us what you need done</h3>
+
+            <font size="2">contact skilled open prototype platform within minutes.post your idea/problem get the
+              solution and chat with them.</font>
+          </li>
+          <li class="list-group-item">
+            <font size="4" class="font-weight-bold">Choose a name for your project</font>
+            <input type="text" class="form-control" name="head_line" [(ngModel)]="projectdata.head_line"
+               placeholder="e.g . micro credentials">
+
+            <div id="rating">
+              <font size="4" class="font-weight-bold">Tell us more about your project</font><br>
+              <font size="2">Start with a bit about yourself or your business, and include an overview of what you need
+                done</font>
+              <textarea class="form-control" name="summary" [(ngModel)]="projectdata.summary"
+              rows="4" placeholder="Describe your project here"></textarea>
+            </div>
+            <div>
+              <font size="4" class="font-weight-bold">Skills</font>
+              <input type="text" class="form-control" name="skill" [(ngModel)]="projectdata.skill"
+                placeholder="e.g . php,java">
+
+            </div>
+            <div>
+              <button type="button" class="btn btn-success" type="submit" data-toggle="modal"
+                data-target="#exampleModal" (click)="addProjectData()" id="change">
+                Upload
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Uploaded Succussfully
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--#model-->
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+
+
+
+      <div class="col-lg-1"></div>
+
+    </div>
+    <!--#card-->
+    <div class="row" id="space">
+
+    </div>
+
+
+
+
+  </div>
+</body>
